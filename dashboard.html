@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="index.css">
+
+
+</head>
+<body>
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">PSQUARE</h2>
+            </div>
+        </div>
+
+        <div class="content">
+            <h1 id="welcome-message">Welcome to <span>Pro Kabaddi</span></h1>
+            <button class="cn" onclick="logout()">Logout</button>
+        </div>
+    </div>
+
+    <script>
+        // Check if user is logged in
+        document.addEventListener("DOMContentLoaded", function () {
+            const user = localStorage.getItem("loggedInUser");
+            if (!user) {
+                alert("Please log in first.");
+                window.location.href = "index.html";
+            }
+        });
+
+        function logout() {
+            localStorage.removeItem("loggedInUser");
+            alert("You have logged out.");
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>
